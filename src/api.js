@@ -8,7 +8,10 @@ export const getCats = async () => {
             id: cat.id,
             imageUrl: cat.url,
             name: faker.name.firstName(),
-            price: faker.commerce.price()
+            price: faker.commerce.price(),
+            location: faker.address.cityName(),
+            breed: faker.animal.cat(),
+            description: faker.lorem.paragraph()
         }
     ))
 
