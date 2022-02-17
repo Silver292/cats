@@ -1,6 +1,8 @@
+import React from 'react'
+
 export const BasketButton = ({ onClick }) => (
   <button className='bg-blue-500 p-4 rounded-full fixed hover:scale-110'
-  onClick={onClick}>
+    onClick={onClick}>
     <svg
       className='text-white w-8 h-8'
       xmlns='http://www.w3.org/2000/svg'

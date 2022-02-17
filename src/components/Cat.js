@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Cat = ({ name, id, price, imageUrl, onDetailClick, onBasketClick }) => (
+export const Cat = ({ name, price, imageUrl, onDetailClick, onBasketClick }) => (
   <div className='bg-gray-800 w-64 shadow-lg rounded p-4'>
     <img src={imageUrl} className='block h-48 w-full rounded object-contain' alt={name} />
     <div className='flex items-baseline justify-between'>
