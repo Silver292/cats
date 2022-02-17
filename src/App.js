@@ -1,7 +1,18 @@
-import logo from './logo.svg';
+import { getCats } from './api';
 import './App.css';
 
+
 function App() {
+  const [cats, setCats] = useState([])
+
+  useEffect(() => {
+    const getData = async () => {
+      setCats(await getCats())
+    }
+
+    getData()
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
