@@ -1,0 +1,7 @@
+.CatContainer {
+    background-color: gray;
+    padding: 8px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+}
