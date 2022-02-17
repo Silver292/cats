@@ -1,14 +1,15 @@
 import React from 'react'
 import './Components.css'
 
-export const Cat = ({name, id, price, imageUrl}) => {
-    console.log('imageUrl: ', imageUrl)
-    return (
-        <div className='CatContainer'>
-            <img src={imageUrl} width={250} height={250} alt={name}/>
-            <h2>{name}</h2>
-            <h2>£{price}</h2>
-        </div>
-    )
-
+export const Cat = ({ name, id, price, imageUrl }) => {
+  console.log('imageUrl: ', imageUrl)
+  return (
+    <div className='bg-gray-800 w-60 shadow-lg rounded p-2'>
+      <img src={imageUrl} className='block h-48 w-full rounded' alt={name} />
+      <div class='p-2'>
+        <h3 class=' text-white py-1 text-base justify-center'>{name}</h3>
+        <p class='text-gray-400 text-sm'>£{price}</p>
+      </div>
+    </div>
+  )
 }
