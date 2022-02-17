@@ -1,5 +1,4 @@
 import React from 'react'
-import './Components.css'
 
 export const Cat = ({ name, id, price, imageUrl, onDetailClick }) => (
   <div className='bg-gray-800 w-60 shadow-lg rounded p-2'>

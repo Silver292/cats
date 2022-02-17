@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react'
 
 import { getCats } from './api';
 import { Cat, Spinner, BasketButton, Modal } from './components'
-import './App.css';
-
 
 function App() {
   const [cats, setCats] = useState([])
