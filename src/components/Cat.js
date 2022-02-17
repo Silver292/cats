@@ -5,7 +5,9 @@ export const Cat = ({
   price,
   imageUrl,
   onDetailClick,
-  onBasketClick
+  onBasketClick,
+  onRemoveClick,
+  inBasket
 }) => (
   <div className='bg-gray-800 w-64 shadow-lg rounded p-4'>
     <img
@@ -23,11 +25,19 @@ export const Cat = ({
         onClick={onDetailClick}>
         Detail
       </button>
-      <button
-        className='bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded'
-        onClick={onBasketClick}>
-        Add to basket
-      </button>
+      {inBasket ? (
+        <button
+          className='bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded'
+          onClick={onRemoveClick}>
+          Remove
+        </button>
+      ) : (
+        <button
+          className='bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded'
+          onClick={onBasketClick}>
+          Add to basket
+        </button>
+      )}
     </div>
   </div>
 )
