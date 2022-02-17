@@ -1,7 +1,7 @@
 import React from 'react'
 import './Components.css'
 
-export const Cat = ({ name, id, price, imageUrl, breed }) => (
+export const Cat = ({ name, id, price, imageUrl, onDetailClick }) => (
   <div className='bg-gray-800 w-60 shadow-lg rounded p-2'>
     <img src={imageUrl} className='block h-48 w-full rounded' alt={name} />
     <div class='p-2'>
@@ -9,7 +9,7 @@ export const Cat = ({ name, id, price, imageUrl, breed }) => (
       <p class='text-gray-400 text-sm'>£{price}</p>
     </div>
     <div className='flex justify-between'>
-      <button className='bg-white rounded p-2'>Detail</button>
+      <button className='bg-white rounded p-2' onClick={onDetailClick} >Detail</button>
       <button className='bg-blue-400 rounded p-2'>Add to basket</button>
     </div>
   </div>

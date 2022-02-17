@@ -14,5 +14,4 @@ export const getCats = async () => {
             description: faker.lorem.paragraph()
         }
     ))
-
 }
