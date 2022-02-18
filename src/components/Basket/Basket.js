@@ -47,7 +47,7 @@ export const Basket = ({
               .toFixed(2)}
           </h3>
         </div>
-        <div>
+        <div className='mr-5'>
           <button
             onClick={onCheckoutClick}
             className='bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded w-full mt-4'>
