@@ -1,4 +1,5 @@
 export * from './Cat'
+export * from './CatDetail'
 export * from './Spinner'
 export * from './Basket'
-export * from './Modal/Modal'
+export * from './Modal'

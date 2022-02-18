@@ -5,18 +5,15 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
 }
 
 .modal-content {
   background-color: white;
   position: fixed;
-  top: 70px;
-  left: 70px;
-  right: 70px;
-  bottom: 70px;
   display: flex;
   flex-direction: column;
   overflow: 'auto';
+  left: 25%;
+  width: 50%;
+  top: 10%;
 }

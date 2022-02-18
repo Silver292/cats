@@ -7,12 +7,11 @@ export const BasketButton = ({ onClick, count }) => (
       onClick={onClick}>
       <BasketIcon />
     </button>
-    {count ?
+    {count ? (
       <span className='inline-flex items-center relative px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full'>
         {count}
       </span>
-      : null
-    }
+    ) : null}
   </div>
 )
 

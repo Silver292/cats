@@ -2,15 +2,23 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 
 import { getCats } from './api'
-import { Cat, Spinner, Basket, BasketButton, Modal } from './components'
+import {
+  Cat,
+  Spinner,
+  Basket,
+  BasketButton,
+  CatDetail,
+  Checkout
+} from './components'
 
 function App() {
   const [cats, setCats] = useState([])
-  const [showBasket, setShowBasket] = useState(false)
+  const [basket, setBasket] = useState([])
 
   const [selectedCat, setSelectedCat] = useState(null)
 
-  const [basket, setBasket] = useState([])
+  const [showBasket, setShowBasket] = useState(false)
+  const [showCheckout, setShowCheckout] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
@@ -33,8 +41,16 @@ function App() {
 
   return (
     <>
+      {showCheckout && (
+        <Checkout
+          basket={basket}
+          onCloseClick={() => setShowCheckout(false)}
+          onRemoveClick={removeFromBasket}
+        />
+      )}
+
       {selectedCat && (
-        <Modal
+        <CatDetail
           cat={selectedCat}
           onCloseClick={() => {
             setSelectedCat(null)
@@ -46,6 +62,7 @@ function App() {
         visible={showBasket}
         items={basket}
         removeFromBasket={removeFromBasket}
+        onCheckoutClick={() => setShowCheckout(true)}
       />
 
       <div className='grid place-items-center min-h-screen bg-gradient-to-t from-blue-200 to-gray-800 p-5'>
