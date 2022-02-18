@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 export const Basket = ({
   visible,
@@ -7,8 +7,7 @@ export const Basket = ({
   onCheckoutClick
 }) => (
   <div
-    className={`fixed inset-0 bg-white w-72 px-5 pt-28 transition-transform overflow-auto ${
-      visible ? 'translate-x-0' : '-translate-x-full'
+    className={`fixed inset-0 bg-white w-72 pl-5 pt-28 transition-transform overflow-auto ${visible ? 'translate-x-0' : '-translate-x-full'
     }`}>
     <h2 className='text-gray-600 text-xl font-bold align-center mb-10'>
       Your Basket
@@ -16,28 +15,30 @@ export const Basket = ({
 
     {items.length < 1 && <p className='mt-6 text-gray-400'>Basket is empty!</p>}
 
-    {items.map((item) => (
-      <div key={item.id} className='grid grid-cols-2 my-6'>
-        <div className='flex items-center'>
-          <img
-            className='inline object-cover w-6 h-6 rounded-full mr-2'
-            src={item.imageUrl}
-            alt={item.name}
-          />
-          <p className='text-lg text-gray-800 font-medium'>{item.name}</p>
-        </div>
-        <p className='text-right text-gray-700 self-center'>£{item.price}</p>
-        <button
-          onClick={() => removeFromBasket(item)}
-          className='col-start-2 text-right mt-1 text-blue-400 hover:text-blue-600 font-medium'>
-          Remove
-        </button>
-      </div>
-    ))}
+    <div className='grid grid-cols-2 my-6 overflow-auto pr-5' style={{maxHeight: '33rem'}}>
+      {items.map((item) => (
+        <Fragment key={item.id}>
+          <div className='flex items-center mb-1'>
+            <img
+              className='inline object-cover w-6 h-6 rounded-full mr-2'
+              src={item.imageUrl}
+              alt={item.name}
+            />
+            <p className='text-lg text-gray-800 font-medium'>{item.name}</p>
+          </div>
+          <p className='text-right text-gray-700 self-center'>£{item.price}</p>
+          <button
+            onClick={() => removeFromBasket(item)}
+            className='col-start-2 text-right mt-1 text-blue-400 hover:text-blue-600 font-medium mb-3'>
+            Remove
+          </button>
+        </Fragment>
+      ))}
+    </div>
 
     {items.length ? (
       <>
-        <div className='grid grid-cols-2 my-3'>
+        <div className='grid grid-cols-2 my-3 pr-5'>
           <h3 className='text-gray-900 font-bold'>Total</h3>
           <h3 className='text-right text-gray-900 font-bold'>
             £

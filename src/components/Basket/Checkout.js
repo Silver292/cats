@@ -31,7 +31,7 @@ export const Checkout = ({ basket, onCloseClick, onRemoveClick }) => {
               text='Card number'
               id='card-number'
               type='tel'
-              inputmode='numeric'
+              inputMode='numeric'
               pattern='[0-9\s]{13,19}'
             />
             <div className='flex justify-between items-center'>
@@ -54,7 +54,7 @@ export const Checkout = ({ basket, onCloseClick, onRemoveClick }) => {
         </div>
 
         <div className='bg-gray-50 p-4 w-1/2 rounded-r'>
-          <div className='grid grid-col-2 gap-10 mb-6'>
+          <div className='grid grid-col-2 gap-10 mb-6 overflow-auto' style={{maxHeight: '33rem'}}>
             {basket.map((item) => (
               <Fragment key={item.id}>
                 <img
